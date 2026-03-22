@@ -1,0 +1,17 @@
+@startuml
+title PropDevelopment Context Diagram
+
+top to bottom direction
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+
+Person(owner, "Собственник", "Использует мобильное приложение PropDevelopment")
+
+System(propSystem, "PropDevelopment", "Сервисы для собственников: функции умного дома")
+
+System_Ext(partnerSmartHome, "Платформа партнёра «Умный дом»", "Интеллектуальный домофон и интеллектуальный шлагбаум")
+
+Rel(owner, propSystem, "Управляет функциями умного дома")
+Rel(propSystem, partnerSmartHome, "Интеграция сервисов умного дома")
+
+@enduml
